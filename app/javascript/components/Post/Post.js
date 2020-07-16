@@ -8,9 +8,9 @@ const Post = (props) =>{
   const [comment, setComment] = useState({})
   const [loaded, setLoaded] = useState(false)
 
-  this.state = {
-    comments: []
-  }
+  // this.state = {
+  //   comments: []
+  // }
 
   useEffect(()=>{
     const id = props.match.params.id
@@ -47,10 +47,10 @@ const Post = (props) =>{
       setPost({...post, included})
       setComment({body: ''})
 
-      console.log('Saved')
-      this.setState(prevState=>({
-        comments: [newComment, ...prevState.comments]
-      }))
+      // console.log('Saved')
+      // this.setState(prevState=>({
+      //   comments: [newComment, ...prevState.comments]
+      // }))
     })
     .catch(response => {})
   }
