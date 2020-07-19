@@ -21,13 +21,12 @@ const Button = styled.a`
     -6px 6px 0px 3px #473228;
 `
 
-
 const Header = (props) => {
   return(
     <Section className="home-section--1">
       <div className="container">
         <div className="row">
-          <div className="col-12 pt-3 pb-3 mb-1">
+          <div className="col-md-12 pt-3 pb-3 mb-1">
             <div className="cta-wrapper">
               <Button className="btn cta-btn">StackUnderFlow.</Button>
               <div className="float-right">

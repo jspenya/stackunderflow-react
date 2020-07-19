@@ -2,29 +2,42 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Header from './Header'
 import CommentForm from './CommentForm'
+import Comment from './Comment'
+// import Comments from './Comments'
+import ReactDOM, { render } from "react-dom";
 
 const Post = (props) =>{
   const [post, setPost] = useState({})
   const [comment, setComment] = useState({})
+  const [comments, setComments] = useState([])
   const [loaded, setLoaded] = useState(false)
 
-  this.state = {
-    comments: []
-  }
+  // this.state = {
+  //   comments: []
+  // }
+  const post_id = props.match.params.id
+  const post_url = `/api/v1/posts/${post_id}`
+  // const id = props.post.id
+  const comment_url = `/api/v1/comments.json?post_id=${post_id}`
 
   useEffect(()=>{
-    const id = props.match.params.id
-    const url = `/api/v1/posts/${id}`
 
-    axios.get(url)
+    axios.get(post_url)
     .then( response => {
       setPost(response.data)
       setLoaded(true)
 
       console.log(response)
     })
+
+    axios.get(comment_url)
+    .then( resp => {
+      console.log(resp)
+      setComments(resp.data.data)
+    })
+
     .catch( response => console.log(response) )
-  }, [])
+  }, [comments.length])
 
   const handleChange = (e) => {
     e.preventDefault()
@@ -40,20 +53,68 @@ const Post = (props) =>{
     const csrfToken = document.querySelector('[name=csrf-token]').content
     axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken
 
-    const post_id = post.data.id
+    // const post_id = post.data.id
     axios.post('/api/v1/comments', {comment, post_id})
     .then(response => {
-      const included = [...post.included, response.data.data]
-      setPost({...post, included})
+      const comments = [...post.comments, response.data.data]
+      setPost({...post, comments})
       setComment({body: ''})
+      setComments([comments])
+      
+      // axios.get(comment_url)
+      // .then( resp => {
+        //   console.log(resp)
+        //   setComments(resp.data.data)
+        // })
+        
+        
+        
+        
+        // console.log('Comment successfully added:', comment)
+        // ReactDOM.render(<div><Comments
+        //   post={post.data.attributes}
+      // /> {comments_grid}</div>);
 
-      console.log('Saved')
-      this.setState(prevState=>({
-        comments: [newComment, ...prevState.comments]
-      }))
-    })
-    .catch(response => {})
-  }
+      
+    // const Component = React.createClass({
+    //   render: function(){
+      //     return(
+        //       <div>{comment}</div>
+        //     )
+        //   }
+        // })
+        // const c = document.getElementById("comments-section");
+        // ReactDOM.render(React.createElement(Component, {}, <div className="children"
+        // dangerouslySetInnerHTML={{ __html: c.innerHTML }}></div>), c);
+        // console.log('Saved')
+        // this.setState(prevState=>({
+          //   comments: [newComment, ...prevState.comments]
+          // }))
+        })
+        .catch(response => {})
+        window.location.reload();
+      }
+      
+      const comments_grid = comments.map( item =>{
+    return(
+      <Comment
+        key={item.attributes.body}
+        attributes={item.attributes}
+        />
+    )
+  })
+  
+  // if (post.comments && post.comments.length > 0) {
+    //   postComments = comments.map( (comment, index) => {
+      //     return (
+  //       <Comment 
+  //         key={index}
+  //         id={comment.id}
+  //         attributes={comment}
+  //       />
+  //     )
+  //   })
+  // }
 
     return (
       <div className="container">
@@ -65,6 +126,11 @@ const Post = (props) =>{
               attributes={post.data.attributes}
               comments={post.included}
             />
+              <div className="comments-section">
+                <div className="container">
+                {comments_grid}
+                </div>
+              </div>
             <CommentForm
               handleChange={handleChange}
               handleSubmit={handleSubmit}

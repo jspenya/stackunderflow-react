@@ -10,6 +10,6 @@
 #  updated_at :datetime         not null
 #
 class Reply < ApplicationRecord
-  belongs_to :user
+  # belongs_to :user
   belongs_to :comment
 end
