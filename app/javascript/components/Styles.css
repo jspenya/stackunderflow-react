@@ -1,0 +1,73 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*@import "bootstrap/scss/bootstrap";*/
+@import "bootstrap";
+/* @import "font-awesome-sprockets";
+@import "font-awesome"; */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Quicksand:wght@300&family=Raleway:wght@600&family=Roboto+Slab:wght@600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;800&display=swap');
+
+tr {
+	
+	border-bottom: 1px solid #d4d0d0; 
+
+}
+
+home_link { font-family: 'Roboto Slab', serif; }
+h4 { font-family: 'Lora', serif;}
+h5 {font-family: 'Quicksand', sans-serif;}
+posted_by {font-family: 'Quicksand', sans-serif;}
+post_count {font-family: 'Roboto Slab', serif; font-weight: bold}
+
+post_title {font-family: 'Roboto Slab', serif; font-weight: 600; font-size: 20px}
+post_body {font-family: 'Roboto Slab', serif; font-weight: 300; font-size: 15px}
+post_tags {font-family: 'Quicksand', sans-serif; color: #808080; font-weight: bold; font-size: 12px}
+post_by_show {font-family: 'Raleway', sans-serif; font-weight: bold; font-size: 12px}
+
+comment_body {font-family: 'Roboto Slab', serif; font-weight: 300; font-size: 15px}
+commented_by {font-family: 'Raleway', sans-serif; font-size: 12px; color: gray;}
+reply_link { font-size: 12px;}
+upvote { font-family: 'Raleway', serif; font-weight: bold; font-size: 9px }
+comment_submit { font-family: 'Raleway', serif; font-weight: bold; font-size: 9px }
+ask { font-family: 'Raleway', serif; font-weight: bold; font-size: 15px }
+post_title_text { font-family: 'Roboto Slab', serif; font-weight: bold; font-size: 15px }
+post_body_text { font-family: 'Roboto Slab', serif; font-weight: bold; font-size: 15px }
+post_tags_text { font-family: 'Roboto Slab', serif; font-weight: bold; font-size: 15px }
+
+sign_up { font-family: 'Raleway', serif; font-weight: bold; font-size: 25px }
+username_signup { font-family: 'Raleway', serif; font-weight: bold; font-size: 15px }
+pwd_signup { font-family: 'Raleway', serif; font-weight: bold; font-size: 15px }
+pwdconf_signup { font-family: 'Raleway', serif; font-weight: bold; font-size: 15px }
+
+comment_show_body {font-family: 'Roboto Slab', serif; font-weight: 300; font-size: 20px}
+comment_show_by {font-family: 'Raleway', sans-serif; font-weight: bold; font-size: 10px}
+
+a {color: black; text-decoration: none;}
+a:hover {text-decoration:none; color: #FF8C00; transition-duration: 0.3s;}
+
+.btn {transition-duration: 0.5s; background-color:	#FF8C00; border: 0px;} 
+.btn-logout {background-color:	#FF8C00; border: 0px;} 
+
+.box{ border: 1px solid #d0cdcd; margin: 10px 0; padding:40px; }
+
+.indexp { background-color: #F5F5F5 }
+
+.comments_tab {	padding-top: 5px; padding-bottom: 5px; }
+
+.upvote-submit { border: 0px }

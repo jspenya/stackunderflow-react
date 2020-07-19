@@ -11,14 +11,27 @@ const Body = styled.div `
 `
 
 const Header = (props) => {
+
   const {title, body} = props.attributes
+
   const total = props.comments.length
+
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
+    hour: "numeric",
+    minute: "numeric"
+  });
+  
+
   return(
     <div className="row">
       <div className="col-md-12">
         <Wrapper>
         <div><post_title>{title}</post_title></div>
-        <Body><post_body>{body}</post_body></Body>
+        <commented_by>Posted on {formatter.format(Date.parse(props.attributes.created_at))}</commented_by>
+        <Body>{body}</Body>
         </Wrapper>
       </div>
     </div>

@@ -3,7 +3,12 @@ module Api
     class CommentsController < ApplicationController
     protect_from_forgery with: :null_session
       def index
-        comments = Comment.all
+        comments = post.comments 
+          # if params[:post_id]
+          #   Comment.where post_id: params[:post_id]
+          # else
+          #   Comment.all
+          # end
 
         render json: CommentSerializer.new(comments).serialized_json
       end

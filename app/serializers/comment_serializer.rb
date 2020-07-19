@@ -1,4 +1,7 @@
 class CommentSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :body, :post_id
+  belongs_to :post
+  attributes :id, :body, :post_id, :created_at
+
+  has_many :replies, dependent: :destroy
 end
