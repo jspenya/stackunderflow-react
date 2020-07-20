@@ -41,7 +41,7 @@ const PostForm = (props) => {
             <Form onSubmit={props.handleSubmit}>
               <Field>
                 <div className="post-create">
-                  <post_title>Got a Question?</post_title>
+                  <div className="post_title">Got a Question?</div>
                   <div className="post-title pb-1 pt-3">
                     <Input autoFocus onChange={props.handleChange} value={props.post.title} rows="1" name="title" placeholder="title here goes here"/>
                   </div>

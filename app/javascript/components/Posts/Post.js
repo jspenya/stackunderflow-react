@@ -20,7 +20,7 @@ const Post = (props) => {
 
   return(
         <Border>
-          <post_title><Link to={`/posts/${props.attributes.id}`}>{props.attributes.title}</Link></post_title>
+          <div className="post_title"><Link to={`/posts/${props.attributes.id}`}>{props.attributes.title}</Link></div>
           <p>{props.attributes.body}</p>
           <p>{props.attributes.tag}</p>
           <p>Posted on {formatter.format(Date.parse(props.attributes.created_at))}</p>

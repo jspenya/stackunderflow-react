@@ -29,8 +29,8 @@ const Header = (props) => {
     <div className="row">
       <div className="col-md-12">
         <Wrapper>
-        <div><post_title>{title}</post_title></div>
-        <commented_by>Posted on {formatter.format(Date.parse(props.attributes.created_at))}</commented_by>
+        <div className="post_title">{title}</div>
+        <div className="commented_by">Posted on {formatter.format(Date.parse(props.attributes.created_at))}</div>
         <Body>{body}</Body>
         </Wrapper>
       </div>

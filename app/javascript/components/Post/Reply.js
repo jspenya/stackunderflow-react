@@ -43,7 +43,7 @@ const Reply = (props) => {
           <div className="col-md-12">
             <Border>
             <Flex>
-              <reply_link>{props.attributes.body}</reply_link>
+              <div className="reply_link">{props.attributes.body}</div>
             </Flex>
               {/* <commented_by>Posted on {formatter.format(Date.parse(props.attributes.created_at))}</commented_by> */}
             </Border>
