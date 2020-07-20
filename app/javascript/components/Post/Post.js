@@ -3,7 +3,6 @@ import axios from 'axios'
 import Header from './Header'
 import CommentForm from './CommentForm'
 import Comment from './Comment'
-// import Comments from './Comments'
 import ReactDOM, { render } from "react-dom";
 
 const Post = (props) =>{
@@ -11,13 +10,9 @@ const Post = (props) =>{
   const [comment, setComment] = useState({})
   const [comments, setComments] = useState([])
   const [loaded, setLoaded] = useState(false)
-
-  // this.state = {
-  //   comments: []
-  // }
+  
   const post_id = props.match.params.id
   const post_url = `/api/v1/posts/${post_id}`
-  // const id = props.post.id
   const comment_url = `/api/v1/comments.json?post_id=${post_id}`
 
   useEffect(()=>{
@@ -61,35 +56,6 @@ const Post = (props) =>{
       setComment({body: ''})
       setComments([comments])
       
-      // axios.get(comment_url)
-      // .then( resp => {
-        //   console.log(resp)
-        //   setComments(resp.data.data)
-        // })
-        
-        
-        
-        
-        // console.log('Comment successfully added:', comment)
-        // ReactDOM.render(<div><Comments
-        //   post={post.data.attributes}
-      // /> {comments_grid}</div>);
-
-      
-    // const Component = React.createClass({
-    //   render: function(){
-      //     return(
-        //       <div>{comment}</div>
-        //     )
-        //   }
-        // })
-        // const c = document.getElementById("comments-section");
-        // ReactDOM.render(React.createElement(Component, {}, <div className="children"
-        // dangerouslySetInnerHTML={{ __html: c.innerHTML }}></div>), c);
-        // console.log('Saved')
-        // this.setState(prevState=>({
-          //   comments: [newComment, ...prevState.comments]
-          // }))
         })
         .catch(response => {})
         window.location.reload();
@@ -103,19 +69,6 @@ const Post = (props) =>{
         />
     )
   })
-  
-  // if (post.comments && post.comments.length > 0) {
-    //   postComments = comments.map( (comment, index) => {
-      //     return (
-  //       <Comment 
-  //         key={index}
-  //         id={comment.id}
-  //         attributes={comment}
-  //       />
-  //     )
-  //   })
-  // }
-
     return (
       <div className="container">
       { loaded && 

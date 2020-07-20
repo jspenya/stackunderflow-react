@@ -35,14 +35,14 @@ h5 {font-family: 'Quicksand', sans-serif;}
 posted_by {font-family: 'Quicksand', sans-serif;}
 post_count {font-family: 'Roboto Slab', serif; font-weight: bold}
 
-post_title {font-family: 'Roboto Slab', serif; font-weight: 600; font-size: 20px}
+.post_title {font-family: 'Roboto Slab', serif; font-weight: 600; font-size: 20px}
 post_body {font-family: 'Roboto Slab', serif; font-weight: 300; font-size: 15px}
 post_tags {font-family: 'Quicksand', sans-serif; color: #808080; font-weight: bold; font-size: 12px}
 post_by_show {font-family: 'Raleway', sans-serif; font-weight: bold; font-size: 12px}
 
 comment_body {font-family: 'Roboto Slab', serif; font-weight: 300; font-size: 15px}
-commented_by {font-family: 'Raleway', sans-serif; font-size: 12px; color: gray;}
-reply_link { font-size: 12px;}
+.commented_by {font-family: 'Raleway', sans-serif; font-size: 12px; color: gray;}
+.reply_link { font-size: 12px;}
 upvote { font-family: 'Raleway', serif; font-weight: bold; font-size: 9px }
 comment_submit { font-family: 'Raleway', serif; font-weight: bold; font-size: 9px }
 ask { font-family: 'Raleway', serif; font-weight: bold; font-size: 15px }

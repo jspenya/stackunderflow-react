@@ -106,12 +106,12 @@ const Comment = (props) => {
             <Flex>
               <CommentBody>{props.attributes.body}</CommentBody>
             </Flex>
-              <commented_by>Posted on {formatter.format(Date.parse(props.attributes.created_at))}</commented_by>
+              <div className="commented_by">Posted on {formatter.format(Date.parse(props.attributes.created_at))}</div>
               <div className="container pb-3">
                 <div className="row">
-                  <reply_link>Replies: </reply_link>
+                  <div className="reply_link">Replies: </div>
                   <div className="col-md-12">
-                    <reply_link>{replies_grid}</reply_link>
+                    <div className="reply_link">{replies_grid}</div>
                     <ReplyForm
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
