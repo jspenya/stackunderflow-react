@@ -21,12 +21,7 @@
     "styled-components": "^5.1.1",
     "webpack-cli": "^3.3.12"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
   }
